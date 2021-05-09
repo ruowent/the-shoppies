@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import LiveSearch from './components/LiveSearch';
+import useApplicationData from './hooks/useApplicationData';
 
-function App() {
+const App = () => {
+  const { state, setNominationList } = useApplicationData();
+  const { nominationList } = state;
+
+
+  // const initialState = {
+  //   nominationList: [],
+  //   nominationToggle: function (id) {
+  //     const index = this.nominationList.indexOf(id);
+
+  //     if (index < 0) {
+  //       // add nomination
+  //       this.nominationList.push(id);
+  //     } else {
+  //       // remove nomination
+  //       this.nominationList.splice(index, 1);
+  //     }
+  //     console.log('this.nominationList', this.nominationList);
+  //   }
+  // }
+
+
   return (
+    // <NominationContext.Provider value={initialState}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LiveSearch nominationList={nominationList} setNominationList={setNominationList} />
     </div>
+    // </NominationContext.Provider>
   );
 }
 
