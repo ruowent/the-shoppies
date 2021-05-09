@@ -33,7 +33,7 @@ export default function SearchContainer() {
     }
 
     const apiKey = 'b27bd681';
-    const url = `https://ruowent.github.io/the-shoppies/http://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`;
+    const url = `https://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`;
 
     fetch(url)
       .then(res => res.json())
