@@ -1,36 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import LiveSearch from './components/LiveSearch';
-import useApplicationData from './hooks/useApplicationData';
+import { AppContextProvider } from './AppContext';
+import NominationContainer from './components/nominations/NominationContainer';
+import SearchContainer from './components/search/SearchContainer';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Paper } from '@material-ui/core';
+import Header from './components/header/Header';
 
-const App = () => {
-  const { state, setNominationList } = useApplicationData();
-  const { nominationList } = state;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    alignItems: 'stretch',
+    height: '100%',
+    padding: theme.spacing(4)
+  },
+  container: {
+    height: '100%'
+  },
+  control: {
+    padding: theme.spacing(2),
+  },
+}));
 
-
-  // const initialState = {
-  //   nominationList: [],
-  //   nominationToggle: function (id) {
-  //     const index = this.nominationList.indexOf(id);
-
-  //     if (index < 0) {
-  //       // add nomination
-  //       this.nominationList.push(id);
-  //     } else {
-  //       // remove nomination
-  //       this.nominationList.splice(index, 1);
-  //     }
-  //     console.log('this.nominationList', this.nominationList);
-  //   }
-  // }
-
+function App() {
+  const classes = useStyles();
 
   return (
-    // <NominationContext.Provider value={initialState}>
-    <div className="App">
-      <LiveSearch nominationList={nominationList} setNominationList={setNominationList} />
-    </div>
-    // </NominationContext.Provider>
+    <AppContextProvider>
+      <Header></Header>
+      <Grid container justify="center" className={classes.root} spacing={3}>
+        <Grid item xs={6} className={classes.container}>
+          <SearchContainer />
+        </Grid>
+        <Grid item xs={6} className={classes.container}>
+          <NominationContainer />
+        </Grid>
+      </Grid>
+    </AppContextProvider>
   );
 }
 
