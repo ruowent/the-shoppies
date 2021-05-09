@@ -27,7 +27,7 @@ export default function Header() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            The Shoppies Award
+            The Shoppies Awards
           </Typography>
           <Button color="inherit" onClick={appContext.onReset}>Reset</Button>
         </Toolbar>
