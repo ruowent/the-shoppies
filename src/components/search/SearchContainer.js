@@ -38,7 +38,6 @@ export default function SearchContainer() {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(`Found: ${JSON.stringify(data)}`);
         if (data.Response === 'False') {
           setSearchResult({
             movies: null,
@@ -65,7 +64,7 @@ export default function SearchContainer() {
 
   if (searchQuery.length === 0) {
     return (
-      <Paper className={[appClasses.section, classes.initialScreen]}>
+      <Paper className={`${appClasses.section} ${classes.initialScreen}`}>
         <SearchBox onSearchQueryChange={setSearchQuery} />
       </Paper>
     );

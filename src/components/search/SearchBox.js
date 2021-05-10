@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { InputBase, Paper, IconButton } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
@@ -23,7 +23,7 @@ export default function SearchBox({ onSearchQueryChange }) {
   const handleChange = (event) => {
     onSearchQueryChange(event.target.value);
   }
-  
+
   const classes = useStyles();
 
   return (
@@ -35,7 +35,7 @@ export default function SearchBox({ onSearchQueryChange }) {
         inputProps={{ 'aria-label': 'search movies' }}
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">
-        <SearchIcon/>
+        <SearchIcon />
       </IconButton>
     </Paper>
   )

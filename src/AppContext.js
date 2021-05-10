@@ -36,11 +36,12 @@ export function AppContextProvider({ children }) {
             ...state,
             nominations: [...state.nominations, action.nomination]
           };
-        } 
+        }
+        break;
       case actions.deleteNomination:
         return {
           ...state,
-          nominations: state.nominations.filter(_ => _.imdbID != action.nomination.imdbID)
+          nominations: state.nominations.filter(_ => _.imdbID !== action.nomination.imdbID)
         };
       case actions.reset:
         return initialAppState;
@@ -52,7 +53,6 @@ export function AppContextProvider({ children }) {
   const [appState, dispatch] = useReducer(reducer, getAppState());
 
   useEffect(() => {
-    console.log('app state changed, save to memory', appState);
     saveAppState(appState);
   }, [appState]);
 

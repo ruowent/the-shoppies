@@ -4,7 +4,7 @@ import { AppContextProvider } from './AppContext';
 import NominationContainer from './components/nominations/NominationContainer';
 import SearchContainer from './components/search/SearchContainer';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Header from './components/header/Header';
 
 const useStyles = makeStyles((theme) => ({
