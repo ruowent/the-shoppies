@@ -4,16 +4,16 @@
 - Header
 
 ### Search
-- SearchContainer (display nomination)
+- Search (display nomination)
   - SearchBox
-  - SearchResultList (nomination list)
-    - SearchResult (nomination button)
+  - ResultList (nomination list)
+    - Result (nomination button)
 
 ### Nominations
-- Nomination Container
-  - NominationHeader (count)
-  - NominationList
-    - Nomination
+- Nominations
+  - ResultHeader (nomination count)
+  - ResultList
+    - Result
 
 ## Hooks
 - useContext/useReducer
