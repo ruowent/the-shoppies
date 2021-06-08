@@ -32,8 +32,7 @@ export default function SearchContainer() {
       return;
     }
 
-    const apiKey = 'b27bd681';
-    const url = `https://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`;
+    const url = `https://www.omdbapi.com/?s=${searchQuery}&apikey=${process.env.REACT_APP_APIKEY}`;
 
     fetch(url)
       .then(res => res.json())
