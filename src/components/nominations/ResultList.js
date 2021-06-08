@@ -1,8 +1,8 @@
-import Nomination from './Nomination';
+import Result from './Result';
 import { Typography } from '@material-ui/core';
 import { useAppStyles } from '../../AppStyle';
 
-export default function NominationList({ nominations }) {
+export default function ResultList({ nominations }) {
   const appStyles = useAppStyles();
 
   if (nominations.length === 0) {
@@ -16,7 +16,7 @@ export default function NominationList({ nominations }) {
       <div className={appStyles.sectionContent}>
         {
           nominations.map((nomination, idx) => (
-            <Nomination key={idx} {...nomination} />
+            <Result key={idx} {...nomination} />
           ))
         }
       </div>

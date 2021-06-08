@@ -51,7 +51,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-function SearchResult({ Title, Year, Poster, imdbID, isNominated }) {
+export default function Result({ Title, Year, Poster, imdbID, isNominated }) {
 
   const [openAlert, setOpenAlert] = React.useState(false);
   const appContext = useAppContext();
@@ -132,6 +132,4 @@ function SearchResult({ Title, Year, Poster, imdbID, isNominated }) {
       </div>
     </Card >
   )
-}
-
-export default SearchResult;
+};

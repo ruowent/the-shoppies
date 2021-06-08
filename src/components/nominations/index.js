@@ -1,6 +1,6 @@
 import { useAppContext } from '../../AppContext';
-import NominationList from './NominationList';
-import NominationHeader from './NominationHeader';
+import ResultList from './ResultList';
+import ResultHeader from './ResultHeader';
 import { makeStyles, Paper, Typography } from '@material-ui/core';
 import { useAppStyles } from '../../AppStyle';
 import PlaylistAddSharpIcon from '@material-ui/icons/PlaylistAddSharp';
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function NominationContainer() {
+export default function Nominations() {
   const appContext = useAppContext();
 
   const appClasses = useAppStyles();
@@ -27,10 +27,10 @@ export default function NominationContainer() {
   } else {
     return (
       <Paper className={appClasses.section}>
-        <NominationHeader
+        <ResultHeader
           nominationCount={appContext.nominations.length}
           maxNominationCount={appContext.maxNominationCount} />
-        <NominationList nominations={appContext.nominations} />
+        <ResultList nominations={appContext.nominations} />
       </Paper>
     )
   }

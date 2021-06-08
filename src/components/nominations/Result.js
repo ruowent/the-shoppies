@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Nomination({ Title, Year, Poster, imdbID }) {
+export default function Result({ Title, Year, Poster, imdbID }) {
 
   const appContext = useAppContext();
   const deleteNomination = () => {
@@ -67,6 +67,4 @@ function Nomination({ Title, Year, Poster, imdbID }) {
       </div>
     </Card>
   )
-}
-
-export default Nomination;
+};

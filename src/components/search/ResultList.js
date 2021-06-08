@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchResult from './SearchResult';
+import Result from './Result';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core/';
 import { useAppStyles } from '../../AppStyle';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SearchResultList({ results, nominations = [] }) {
+export default function ResultList({ results, nominations = [] }) {
 
   const isNominated = (movie) => {
     return nominations
@@ -48,7 +48,7 @@ export default function SearchResultList({ results, nominations = [] }) {
       <div className={appStyles.sectionContent}>
         {
           results.movies.map((movie, idx) => {
-            return <SearchResult key={idx} {...movie} isNominated={isNominated(movie)} />;
+            return <Result key={idx} {...movie} isNominated={isNominated(movie)} />;
           })
         }
       </div>

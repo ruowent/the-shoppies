@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { AppContextProvider } from './AppContext';
-import NominationContainer from './components/nominations/NominationContainer';
-import SearchContainer from './components/search/SearchContainer';
+import Nominations from './components/Nominations';
+import Search from './components/Search';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import Header from './components/header/Header';
@@ -29,10 +29,10 @@ function App() {
       <Header></Header>
       <Grid container justify="center" className={classes.root} spacing={3}>
         <Grid item xs={6} className={classes.container}>
-          <SearchContainer />
+          <Search />
         </Grid>
         <Grid item xs={6} className={classes.container}>
-          <NominationContainer />
+          <Nominations />
         </Grid>
       </Grid>
     </AppContextProvider>

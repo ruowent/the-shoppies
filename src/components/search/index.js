@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchBox from './SearchBox';
-import SearchResultList from './SearchResultList';
+import ResultList from './ResultList';
 import { useAppContext } from '../../AppContext';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper } from '@material-ui/core';
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SearchContainer() {
+export default function Search() {
 
   const [searchResult, setSearchResult] = useState({
     result: null,
@@ -71,7 +71,7 @@ export default function SearchContainer() {
     return (
       <Paper className={appClasses.section} >
         <SearchBox onSearchQueryChange={setSearchQuery} />
-        <SearchResultList results={searchResult} nominations={appContext.nominations} />
+        <ResultList results={searchResult} nominations={appContext.nominations} />
       </Paper>
     );
   }

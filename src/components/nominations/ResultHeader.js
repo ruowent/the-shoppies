@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function NominationHeader({ nominationCount, maxNominationCount }) {
+export default function ResultHeader({ nominationCount, maxNominationCount }) {
 
   const classes = useStyles();
 
