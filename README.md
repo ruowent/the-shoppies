@@ -21,6 +21,11 @@ Remove a nominee from the nomination list
 - Remove a nominee from the nomination list or search result
 - Nomination list is visible if the user leaves the page
 
+## Planning/Diagram
+Component Diagram
+
+![Component Diagram](https://github.com/ruowent/the-shoppies/blob/main/public/screenshots/diagram.png?raw=true)
+
 ## Final Product
 - Landing Page
 !["screenshot of the landing page"](https://github.com/ruowent/the-shoppies/blob/main/public/screenshots/landing_page.png?raw=true)
@@ -36,11 +41,6 @@ Remove a nominee from the nomination list
 
 - Too Many Search Results
 !["Too many search results"](https://github.com/ruowent/the-shoppies/blob/main/public/screenshots/too_many_results.png?raw=true)
-
-## Planning/Diagram
-Component Diagram
-
-![Component Diagram](https://github.com/ruowent/the-shoppies/blob/main/public/screenshots/diagram.png?raw=true)
 
 ## Getting Started
 
