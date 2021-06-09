@@ -62,7 +62,7 @@ export default function Result({ Title, Year, Poster, imdbID }) {
           </Typography>
         </CardContent>
         <div className={classes.controls}>
-          <Button className={classes.button} color="secondary" onClick={deleteNomination}>Delete</Button>
+          <Button className={classes.button} variant="outlined" color="secondary" onClick={deleteNomination}>Remove</Button>
         </div>
       </div>
     </Card>

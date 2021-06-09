@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useAppContext } from '../../AppContext';
+
 import SearchBox from './SearchBox';
 import ResultList from './ResultList';
-import { useAppContext } from '../../AppContext';
-import { makeStyles } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
+
+import { makeStyles, Paper } from '@material-ui/core';
 import { useAppStyles } from '../../AppStyle';
 import initialScreenBackground from '../img/minions.png';
 

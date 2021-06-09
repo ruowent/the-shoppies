@@ -1,17 +1,17 @@
 import React from 'react';
-import './App.css';
 import { AppContextProvider } from './AppContext';
+
 import Nominations from './components/Nominations';
 import Search from './components/Search';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
 import Header from './components/header/Header';
+
+import { makeStyles, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     alignItems: 'stretch',
-    height: '100%',
+    height: '45em',
     padding: theme.spacing(4)
   },
   container: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App() {
+export default function App() {
   const classes = useStyles();
   return (
     <AppContextProvider>
@@ -37,6 +37,5 @@ function App() {
       </Grid>
     </AppContextProvider>
   );
-}
+};
 
-export default App;

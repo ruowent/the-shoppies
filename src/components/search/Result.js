@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, forwardRef } from 'react';
 import { useAppContext } from '../../AppContext';
+
 import {
   Button,
   Card,
@@ -11,9 +12,9 @@ import {
   DialogContentText,
   DialogTitle,
   Slide,
-  Typography
+  Typography,
+  makeStyles
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import defaultMovieImage from '../img/defaultMovieImage.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   controls: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
@@ -47,13 +48,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function Result({ Title, Year, Poster, imdbID, isNominated }) {
 
-  const [openAlert, setOpenAlert] = React.useState(false);
+  const [openAlert, setOpenAlert] = useState(false);
   const appContext = useAppContext();
 
   const closeAlertHandler = () => {
@@ -80,8 +81,8 @@ export default function Result({ Title, Year, Poster, imdbID, isNominated }) {
   if (isNominated) {
     control = (
       <div className={classes.controls}>
-        <Typography>You nominated this movie already.</Typography>
-        <Button color='secondary' onClick={deleteHandler} className={classes.button}> Delete?</Button>
+        <Typography>Already nominated</Typography>
+        <Button variant='outlined' color='secondary' onClick={deleteHandler} className={classes.button}>Remove</Button>
       </div>
     );
   } else {
