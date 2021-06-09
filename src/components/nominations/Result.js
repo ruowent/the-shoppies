@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppContext } from '../../AppContext';
+
 import { Button, Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import defaultMovieImage from '../img/defaultMovieImage.png';

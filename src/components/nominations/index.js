@@ -1,9 +1,11 @@
 import { useAppContext } from '../../AppContext';
+
 import ResultList from './ResultList';
 import ResultHeader from './ResultHeader';
+
 import { makeStyles, Paper, Typography } from '@material-ui/core';
-import { useAppStyles } from '../../AppStyle';
 import PlaylistAddSharpIcon from '@material-ui/icons/PlaylistAddSharp';
+import { useAppStyles } from '../../AppStyle';
 
 const useStyles = makeStyles((theme) => ({
   emptyIcon: {
