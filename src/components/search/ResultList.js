@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAppContext } from '../../AppContext';
 
 import Result from './Result';
 
@@ -26,7 +27,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function ResultList({ results, nominations }) {
+export default function ResultList({ results }) {
+
+  const appContext = useAppContext();
 
   const isNominated = (movie, nominations) => {
     return nominations
@@ -49,7 +52,7 @@ export default function ResultList({ results, nominations }) {
       <div className={appStyles.sectionContent}>
         {
           results.movies.map((movie, idx) => {
-            return <Result key={idx} {...movie} isNominated={isNominated(movie, nominations)} />;
+            return <Result key={idx} {...movie} isNominated={isNominated(movie, appContext.nominations)} />;
           })
         }
       </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../../AppContext';
 
 import SearchBox from './SearchBox';
 import ResultList from './ResultList';
@@ -24,8 +23,6 @@ export default function Search() {
     error: null
   });
   const [searchQuery, setSearchQuery] = useState('');
-
-  const appContext = useAppContext();
 
   useEffect(() => {
     if (searchQuery.length === 0) {
@@ -72,7 +69,7 @@ export default function Search() {
     return (
       <Paper className={appClasses.section} >
         <SearchBox onSearchQueryChange={setSearchQuery} />
-        <ResultList results={searchResult} nominations={appContext.nominations} />
+        <ResultList results={searchResult} />
       </Paper>
     );
   }
