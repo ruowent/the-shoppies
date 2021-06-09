@@ -37,6 +37,10 @@ Remove a nominee from the nomination list
 - Too Many Search Results
 !["Too many search results"](https://github.com/ruowent/the-shoppies/blob/main/public/screenshots/too_many_results.png?raw=true)
 
+## Planning/Diagram
+Component Diagram
+
+![Component Diagram](https://github.com/ruowent/the-shoppies/blob/main/public/screenshots/diagram.png?raw=true)
 
 ## Getting Started
 
