@@ -1,13 +1,13 @@
 import React from 'react';
 
-import SearchResultList from './SearchResultList';
+import ResultList from '../components/Search/ResultList';
 
 export default {
-  componet: SearchResultList,
+  componet: ResultList,
   title: 'SearchResultList'
 };
 
-const Template = args => <SearchResultList {...args}/>;
+const Template = args => <ResultList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

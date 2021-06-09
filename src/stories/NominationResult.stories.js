@@ -1,12 +1,12 @@
 import React from 'react';
-import Nomination from './Nomination';
+import Result from '../components/Nominations/Result';
 
 export default {
-  component: Nomination,
-  title: 'Nomination'
+  component: Result,
+  title: 'NominationResult'
 }
 
-const Template = args => <Nomination {...args} />;
+const Template = args => <Result {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

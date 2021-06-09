@@ -1,12 +1,12 @@
 import React from 'react';
-import SearchResult from './SearchResult';
+import Result from '../components/Search/Result';
 
 export default {
-  component: SearchResult,
+  component: Result,
   title: 'SearchResult'
 }
 
-const Template = args => <SearchResult {...args} />;
+const Template = args => <Result {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

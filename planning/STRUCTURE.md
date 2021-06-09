@@ -4,14 +4,14 @@
 - Header
 
 ### Search
-- Search (display nomination)
+- Search
   - SearchBox
-  - ResultList (nomination list)
-    - Result (nomination button)
+  - ResultList
+    - Result
 
 ### Nominations
 - Nominations
-  - ResultHeader (nomination count)
+  - ResultHeader
   - ResultList
     - Result
 
@@ -25,6 +25,7 @@
 - useState
   - search result
   - search query
+  
 ## States
 - appState
 - openAlert
