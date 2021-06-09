@@ -28,7 +28,7 @@ export default function Search() {
   const appContext = useAppContext();
 
   useEffect(() => {
-    if (searchQuery.length <= 0) {
+    if (searchQuery.length === 0) {
       setSearchResult([]);
       return;
     }

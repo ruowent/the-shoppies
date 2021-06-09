@@ -35,6 +35,14 @@ const useStyles = makeStyles((theme) => ({
   },
   controls: {
     display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
+  },
+  controlsNominated: {
+    display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingLeft: theme.spacing(2),
@@ -80,7 +88,7 @@ export default function Result({ Title, Year, Poster, imdbID, isNominated }) {
   let control;
   if (isNominated) {
     control = (
-      <div className={classes.controls}>
+      <div className={classes.controlsNominated}>
         <Typography>Already nominated</Typography>
         <Button variant='outlined' color='secondary' onClick={deleteHandler} className={classes.button}>Remove</Button>
       </div>
@@ -100,7 +108,7 @@ export default function Result({ Title, Year, Poster, imdbID, isNominated }) {
           <DialogTitle id="alert-dialog-slide-title">{`You can only nominate up to ${appContext.maxNominationCount} movies!`}</DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-slide-description">
-              You've hit the limit of {appContext.maxNominationCount} nominations. To nominated other movies, delete one or more from the nominated list.
+              You've hit the limit of {appContext.maxNominationCount} nominations. To nominated other movies, remove one or more from the nominated list.
           </DialogContentText>
           </DialogContent>
           <DialogActions>

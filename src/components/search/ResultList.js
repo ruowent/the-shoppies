@@ -2,8 +2,7 @@ import React from 'react';
 
 import Result from './Result';
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core/';
+import { makeStyles, Typography } from '@material-ui/core/';
 import { useAppStyles } from '../../AppStyle';
 import SentimentVeryDissatisfiedSharpIcon from '@material-ui/icons/SentimentVeryDissatisfiedSharp';
 
@@ -27,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function ResultList({ results, nominations = [] }) {
+export default function ResultList({ results, nominations }) {
 
-  const isNominated = (movie) => {
+  const isNominated = (movie, nominations) => {
     return nominations
-      .map(_ => _.imdbID)
+      .map(nomination => nomination.imdbID)
       .includes(movie.imdbID);
   };
 
@@ -50,7 +49,7 @@ export default function ResultList({ results, nominations = [] }) {
       <div className={appStyles.sectionContent}>
         {
           results.movies.map((movie, idx) => {
-            return <Result key={idx} {...movie} isNominated={isNominated(movie)} />;
+            return <Result key={idx} {...movie} isNominated={isNominated(movie, nominations)} />;
           })
         }
       </div>

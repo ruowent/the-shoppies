@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useContext } from 'react';
+import React, { createContext, useReducer, useEffect, useContext } from 'react';
 
 const maxNominationCount = 5;
 const localStorageKey = 'shoppie-memory';
@@ -17,7 +17,7 @@ const getAppState = () => {
   return stateFromMemory !== null ? JSON.parse(stateFromMemory) : initialAppState;
 }
 
-const AppContext = React.createContext({});
+const AppContext = createContext({});
 AppContext.displayName = 'AppContext';
 
 export function AppContextProvider({ children }) {
@@ -41,7 +41,8 @@ export function AppContextProvider({ children }) {
       case actions.deleteNomination:
         return {
           ...state,
-          nominations: state.nominations.filter(_ => _.imdbID !== action.nomination.imdbID)
+          nominations: state.nominations
+            .filter(nomination => nomination.imdbID !== action.nomination.imdbID)
         };
       case actions.reset:
         return initialAppState;
