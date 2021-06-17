@@ -23,10 +23,6 @@
     * reset nomination
 
 - useState
-  - search result
-  - search query
-  
-## States
-- appState
-- openAlert
-- 
+  - searchResult
+  - searchQuery
+  - openAlert
