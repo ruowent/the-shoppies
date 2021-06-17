@@ -1,7 +1,7 @@
 # The Shoppies Awards
 ### An app to nominate movie awards for entrepreneurs
 
-[Check out my app here](https://ruowent.github.io/the-shoppies/)
+[>>> Check out my app here <<<](https://ruowent.github.io/the-shoppies/)
 
 ## 🎉 Final Product
 
