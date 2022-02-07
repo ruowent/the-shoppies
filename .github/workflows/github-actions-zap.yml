@@ -1,6 +1,8 @@
 on: [push]
-steps:
-  - name: ZAP Scan
-    uses: zaproxy/action-baseline@v0.6.1
-    with:
-      target: 'https://ruowent.github.io/the-shoppies/'
+jobs:
+  zap_scan:
+  steps:
+    - name: ZAP Scan
+      uses: zaproxy/action-baseline@v0.6.1
+      with:
+        target: 'https://ruowent.github.io/the-shoppies/'
